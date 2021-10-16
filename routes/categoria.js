@@ -3,6 +3,7 @@
 
 // Se crea un objeto router para almacenar todas las rutas de accion
 const express = require('express');
+const { listActive } = require('../controllers/CategoryController');
 const router = express.Router();
 
 // const router = require('express').Router();
@@ -31,6 +32,7 @@ router.put('/update', CategoryController.update)
 router.put('/activate', CategoryController.activate)
 router.put('/deactivate', CategoryController.deactivate)
 router.delete('/delete', CategoryController.delete)
+router.get('/listactive', CategoryController.listActive)
 
 // Ahora se exporta el objeto router, para que las diferentes rutas almacenadas en este  
 // sean accesibles desde otros sitios del proyecto

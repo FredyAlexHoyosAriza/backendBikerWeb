@@ -83,6 +83,26 @@ module.exports = {
         }
     },
 
+
+    listActive: async (req, res, next) => {
+        // Regresa todas las docs en categoria cuyo estado es 1
+        // y que se retornen orden descendente
+        try {
+            // Al ser un metodo asinccrono por precaucion debe
+            // ir en un bloque try-catch
+            const docs = await models.Categoria.find({ state: 1 })
+                .sort({ createdAt: 1 }); // orden: -1 del el utlimo guardado al primero, 1 al contrario
+            res.status(200).json(docs);
+        } catch (error) {
+            res.status(500).send({
+                message: 'Ocurrio un error interno!'
+            });
+            next(error);
+        }
+
+    },
+
+
     update: async (req, res, next) => {
         try {
             // Si se intenta dar un nuevo nombre a la categoria,
