@@ -1,4 +1,5 @@
 var jwt = require('jsonwebtoken');
+require('dotenv').config()
 
 // Para que los metodos del modulo sean publicos
 module.exports = {
@@ -13,9 +14,11 @@ module.exports = {
             rol: user.rol
 
 
-        }, 'llaveSecretaParaCodificarUsuario', { expiresIn: 86400});
+        }, process.env.SECRET_JWT_SEED, { expiresIn: 86400});
         return token;
     }
+
+    // 'llaveSecretaParaCodificarUsuario'
 
     // encode:,
 

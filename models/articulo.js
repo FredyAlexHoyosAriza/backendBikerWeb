@@ -30,7 +30,7 @@ const articleSchema = new Schema({
     state: {
         type: Number,
         default: 1, // activado
-        enum: [0, 1, 2]
+        enum: [0, 1]
     },
     createdAt: {
         type: Date,
@@ -42,8 +42,8 @@ const articleSchema = new Schema({
 
 // Ahora se necesita convertirlo a un modelo y exportarlo
 // Este es el nombre que tiene la coleccion de usuario en todo el resto del proyecto
-// Se ejecuta de mongoose el metodo model el cual generara el modelo de documento Categoria en
-// la coleccion 'categoria'; los datos para generarla se obtienen del userSchema.
+// Se ejecuta de mongoose el metodo model el cual generara el modelo de documento Articulo
+// en la coleccion 'articulo'; los datos para generarla se obtienen del userSchema.
 const Articulo = mongoose.model('articulo', articleSchema);
 
 // Nos permite usarlo en cualquier parte del proyecto

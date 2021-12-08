@@ -12,7 +12,8 @@ const categorySchema = new Schema({
         required: true, //'Category name is required'
         unique: true,
         lowercase: true,
-        enum: ["ciclomotor", "cruiser", "scooter", "motocroos", "enduro", "chopper", "trial"] // enum ya que las categorias son fijas
+        enum: ["herramientas", "deportes", "construcción", "plomería", "eléctricos", 'electrodomésticos', "hogar", "juguetería"] // enum ya que las categorias son fijas
+        // ["ciclomotor", "cruiser", "scooter", "motocroos", "enduro", "chopper", "trial", 'super bike']
     },
     description: {
         type: String,

@@ -68,9 +68,9 @@ module.exports = {
             // de bandera que se aplica en la coincidencia, p. ej. 'i' es para coincidencias por inclusion,
             // esto permite que se encuentre la cadena de forma exacta o que esta este incluida en una
             // cadena mas grande. Pero si se le entrega un undefined (o null) en searchValue, implicaria
-            // que no hay criterio de busqueda y se debe retornar toda la coleccion
+            // que no hay criterio de busqueda y se debe retornar toda la coleccion.
             // Aqui no se filtra si los usuarios estan activos o inactivos, ya que la idea es
-            // que esat gestion se realice desde el front.
+            // que esta gestion se realice desde el front.
             // Si todo va bien, devolvemos nuestro res.status junto con un array de objetos,
             // siendo estos el conjunto de docs de la consulta en formato json
             res.status(200).json(docs);

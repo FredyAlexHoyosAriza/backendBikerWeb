@@ -54,7 +54,7 @@ const userSchema = new Schema({
         lowercase: true,
         // el ususario solo puede tener uno de estos roles, si se entrega otro rol, se tiene error en BD
         // y que pasa al modelo, luego al controlador y luego al front
-        enum : ['administrador', 'gestor', 'cliente', 'vendedor'],
+        enum : ["gestor", "administrador"],
     },
     createdAt: {
         type: Date,
